@@ -47,6 +47,16 @@ public class StringRepositry {
             return count;
         }
 
+        static String displayVertical(String s){
+            String modifiedString = "";
+            for (int i = 0; i < s.length(); i++) {
+                if (s.charAt(i)!=' ') {
+                    modifiedString += s.charAt(i)+"\n";
+                }
+            }
+            return modifiedString;
+        }
+        
     /**
      * @param args the command line arguments
      */
@@ -57,6 +67,7 @@ public class StringRepositry {
         String input_String = scanner.nextLine();
         System.out.println("Number of words: "+wordCounter(input_String));
         System.out.println("Number of vowels: "+vowelCounter(input_String));
+        System.out.println("Your sentence printed vertically is:: "+displayVertical(input_String));
     }
 
 }
