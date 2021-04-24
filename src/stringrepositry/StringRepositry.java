@@ -62,7 +62,6 @@ public class StringRepositry {
     static String ridMultipleBlank(String s) {
         String modifiedString = "";
         for (int i = 0; i < s.length(); i++) {
-
             if (i != s.length() || i != 0) {
                 if (s.charAt(i) != ' ' || (s.charAt(i) == ' ' && s.charAt(i + 1) != ' ' && s.charAt(i + 1) != ',' && s.charAt(i + 1) != '.' && s.charAt(i + 1) != '?' && s.charAt(i + 1) != '!' && s.charAt(i + 1) != ')' && s.charAt(i + 1) != '}' && s.charAt(i + 1) != ']' && s.charAt(i - 1) != '(' && s.charAt(i - 1) != '{' && s.charAt(i + 1) != '[' && s.charAt(i + 1) != ':')) {
                     modifiedString += s.charAt(i);
@@ -75,19 +74,30 @@ public class StringRepositry {
         }
         return modifiedString;
     }
+    
+    static String removeInteger(String s){
+        String modifiedString = "";
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i)<47 || s.charAt(i)>57) {
+               modifiedString += s.charAt(i);
+            }
+        }
+        return modifiedString;
+    }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("InputString:");
+        System.out.println("Input String:");
         Scanner scanner = new Scanner(System.in);
         String input_String = scanner.nextLine();
 //        System.out.println("Number of words: " + wordCounter(input_String));
 //        System.out.println("Number of vowels: " + vowelCounter(input_String));
 //        System.out.print("Your sentence printed vertically is: \n" + displayVertical(input_String));
-        System.out.println(ridMultipleBlank("\n" + input_String));
+//        System.out.println("\n" + ridMultipleBlank(input_String));
+          System.out.println("\n" + removeInteger(input_String));
     }
 
 }
